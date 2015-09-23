@@ -1,12 +1,22 @@
-<div class="outer-box">
-  <img src="{{student.picture}}" alt="{{student.name.first}} {{student.name.last}}" style="width: 200px; height: 200px">
-  Name: {{student.name.first}} {{student.name.last}}
-  <br>Bio: {{student.Bio}}
-  <br>
-  Skills:
-<div ng-repeat="skill in student.skills">
-{{skill.title}}
-  </div>
+<div class="outer-box" ng-mouseover="showHidden()" ng-mouseleave="hide()">
+   <div ng-show="!hidden">
+      <img src="{{student.picture}}" alt="{{student.name.first}} {{student.name.last}}" style="width: 200px; height: 200px"> Name: {{student.name.first}} {{student.name.last}}
+      <br>Bio: {{student.Bio}}
+      <br> Skills:
+      <div ng-repeat="skill in student.skills">
+         {{skill.title}}
+      </div>
+   </div>
 
-  <br>
+
+
+
+   <h1 ng-show="hidden">should be hidden</h1>
+   <div ng-show="hidden">
+      <div>
+         {{student.projects}}
+      </div>'
+   </div>
+
+   <br>
 </div>
